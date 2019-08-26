@@ -1,0 +1,27 @@
+version: '1'
+
+# Whether to receive email notifications or not
+notify_email: True
+
+# the name of the design
+design_name: AES
+
+# put your design source file(s) in the design folder
+# then, put write down a list of all input rtl files below
+design_files: 
+  - design.v
+
+# available libraries on https://flow.theopenroadproject.org
+# select from [nangate45]
+library: nangate45
+
+# constrains file
+sdc_file: design.sdc
+
+# flow definition
+flow:
+  - logic_synthesis
+  - floor_planning
+  - placement
+  - clock_tree_synthesis
+  - routing
